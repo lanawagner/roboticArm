@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let nvc = self.window?.rootViewController as! LanaNavigationController
+        let networkManager : NetworkManager = NetworkManager()
+        nvc.networkManager = networkManager
         return true
     }
 

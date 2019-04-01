@@ -37,23 +37,76 @@
         <!--Network-->
         <scene sceneID="Rnt-HS-Bym">
             <objects>
-                <viewController title="Network" id="Fzk-BM-kyz" sceneMemberID="viewController">
+                <viewController title="Network" id="Fzk-BM-kyz" customClass="NetworkManagerViewController" customModule="RoboticArm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cfI-Zb-iSe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZj-9O-sCJ">
-                                <rect key="frame" x="88" y="336" width="43" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aAc-rX-hcJ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="okj-jp-rdI">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IP Address:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dc5-9f-lUc" userLabel="IPLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="158.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="128.20.20.168" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BK1-4j-8dV" userLabel="IPAddress">
+                                                <rect key="frame" x="168.5" y="0.0" width="206.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="vor-jm-jkN">
+                                        <rect key="frame" x="0.0" y="30.5" width="375" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Port:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lql-sP-xEZ" userLabel="PortLabel">
+                                                <rect key="frame" x="0.0" y="0.0" width="37" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfK-I6-yhB" userLabel="PortName">
+                                                <rect key="frame" x="168.5" y="0.0" width="206.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDN-vr-haT" userLabel="ArmConnect">
+                                        <rect key="frame" x="0.0" y="61" width="375" height="493"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <state key="normal" title="Connect to Arm"/>
+                                        <connections>
+                                            <action selector="connectButtonPressed:" destination="Fzk-BM-kyz" eventType="touchUpInside" id="6Y4-nb-LPH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="BK1-4j-8dV" firstAttribute="leading" secondItem="NfK-I6-yhB" secondAttribute="leading" id="WVG-k3-6A4"/>
+                                    <constraint firstItem="Dc5-9f-lUc" firstAttribute="leading" secondItem="vor-jm-jkN" secondAttribute="leading" id="veg-rG-yZI"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9lo-of-SJn" firstAttribute="trailing" secondItem="aAc-rX-hcJ" secondAttribute="trailing" id="40P-N2-sKQ"/>
+                            <constraint firstItem="aAc-rX-hcJ" firstAttribute="top" secondItem="9lo-of-SJn" secondAttribute="top" id="IqA-DA-SHd"/>
+                            <constraint firstItem="aAc-rX-hcJ" firstAttribute="leading" secondItem="9lo-of-SJn" secondAttribute="leading" id="Swh-Qt-X2k"/>
+                            <constraint firstItem="9lo-of-SJn" firstAttribute="bottom" secondItem="aAc-rX-hcJ" secondAttribute="bottom" id="pcg-WA-dYa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9lo-of-SJn"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Network" id="eej-D8-fYX"/>
+                    <connections>
+                        <outlet property="ConnectToArm" destination="dDN-vr-haT" id="fu1-jm-4xE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pyi-tr-aw0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -80,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="-648" y="140"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Lana Navigation Controller-->
         <scene sceneID="VWK-yU-fFw">
             <objects>
-                <navigationController id="x7d-97-B8P" sceneMemberID="viewController">
+                <navigationController id="x7d-97-B8P" customClass="LanaNavigationController" customModule="RoboticArm" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EEF-a3-emh">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

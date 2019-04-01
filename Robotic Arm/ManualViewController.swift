@@ -12,9 +12,10 @@ class ManualViewController: UIViewController {
     
     //SETUP UI
     
+    var networkManager : NetworkManager!
     func setupUI() {
         //figure out why your custom LayoutSettings don't work
-        self.view.backgroundColor = UIColor(red: 50, green: 50, blue: 0, alpha: 1)
+        //self.view.backgroundColor = UIColor(red: 50, green: 50, blue: 0, alpha: 1)
     }
     
     
@@ -50,6 +51,8 @@ class ManualViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let nv = self.navigationController as! LanaNavigationController
+        networkManager = nv.networkManager
         setupUI()
         updateJointLabels()
         SendContinuouslySwitch.isEnabled=false
@@ -134,7 +137,9 @@ class ManualViewController: UIViewController {
     
     @IBAction func SendPositionPressed(_ sender: Any) {
         
-        //send your position if pressed
+        let aPosition : Position = Position(posBaseAngle: Int(BaseSlider!.value), posBottomJointAngle: Int(Joint1Slider!.value), posMiddleJointAngle: Int(Joint2Slider!.value), posTopJointAngle: Int(Joint3Slider!.value), posMarkerIsOn: MarkerSwitch.isOn)
+        networkManager.sendPosition(pos: aPosition)
+
     }
     @IBAction func ResetPressed(_ sender: Any) {
         //to send reset command
