@@ -15,6 +15,7 @@
 		918009A3224D8DD80001842D /* LanaLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918009A2224D8DD80001842D /* LanaLabel.swift */; };
 		9183D2A6222DEF66001AA8BC /* PositionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9183D2A5222DEF66001AA8BC /* PositionListController.swift */; };
 		9183D2A8222DF2BB001AA8BC /* PositionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9183D2A7222DF2BB001AA8BC /* PositionCell.swift */; };
+		919D25AC225B9FF600D89933 /* LanaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D25AB225B9FF600D89933 /* LanaButton.swift */; };
 		91CD65522224B38200E7F887 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD65512224B38200E7F887 /* Position.swift */; };
 		91CD65542224B4DC00E7F887 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD65532224B4DC00E7F887 /* Routine.swift */; };
 		91CD65562224B4F300E7F887 /* RoutineStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD65552224B4F300E7F887 /* RoutineStore.swift */; };
@@ -36,6 +37,7 @@
 		918009A2224D8DD80001842D /* LanaLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanaLabel.swift; sourceTree = "<group>"; };
 		9183D2A5222DEF66001AA8BC /* PositionListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionListController.swift; sourceTree = "<group>"; };
 		9183D2A7222DF2BB001AA8BC /* PositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCell.swift; sourceTree = "<group>"; };
+		919D25AB225B9FF600D89933 /* LanaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanaButton.swift; sourceTree = "<group>"; };
 		91CD65512224B38200E7F887 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		91CD65532224B4DC00E7F887 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		91CD65552224B4F300E7F887 /* RoutineStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineStore.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				9183D2A7222DF2BB001AA8BC /* PositionCell.swift */,
 				918009A0224D8C2B0001842D /* LanaTextBox.swift */,
 				918009A2224D8DD80001842D /* LanaLabel.swift */,
+				919D25AB225B9FF600D89933 /* LanaButton.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				91526B0E221B5FE700CEE88F /* RoutineListController.swift in Sources */,
 				918009A1224D8C2B0001842D /* LanaTextBox.swift in Sources */,
 				91CD65582224B52400E7F887 /* RoutineCell.swift in Sources */,
+				919D25AC225B9FF600D89933 /* LanaButton.swift in Sources */,
 				9170BB812252C88B002F6612 /* LanaNavigationController.swift in Sources */,
 				9170BB7F2252C7A7002F6612 /* NetworkManager.swift in Sources */,
 				91CD65542224B4DC00E7F887 /* Routine.swift in Sources */,

@@ -15,9 +15,21 @@ required init(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)!
     UISetup()
 }
+    
+override init (frame:CGRect) {
+    super.init(frame:frame)
+    self.layer.cornerRadius = 5.0
+    self.clipsToBounds = true
+    self.UISetup()
+}
 func UISetup(){
     
-    self.backgroundColor = LayoutSettings.lightGrey
+    self.backgroundColor = LayoutSettings.blue
+    self.textColor = UIColor.white
+    self.font = UIFont(name: "HelveticaNeue-Light", size: 14)
+    //some sort of border? background? rounded corners?
+    //code is ew not good sad :,( labels are not good
+    //so make it clip to the text and also when it's pretty then change the background color
     
     }
 

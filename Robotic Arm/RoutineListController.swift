@@ -15,6 +15,11 @@ class RoutineListController : UITableViewController {
     override func viewDidLoad() {
         tableView.delegate = self
         tableView.dataSource = self
+        setupUI()
+    }
+    
+    func setupUI() {
+        self.view.backgroundColor = LayoutSettings.blue
     }
     
     override func viewWillAppear(_ animated: Bool) {

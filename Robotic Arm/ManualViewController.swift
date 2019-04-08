@@ -15,7 +15,8 @@ class ManualViewController: UIViewController {
     var networkManager : NetworkManager!
     func setupUI() {
         //figure out why your custom LayoutSettings don't work
-        //self.view.backgroundColor = UIColor(red: 50, green: 50, blue: 0, alpha: 1)
+        self.view.backgroundColor = LayoutSettings.blue
+        //self.view.backgroundColor = UIColor.red
     }
     
     
@@ -42,6 +43,8 @@ class ManualViewController: UIViewController {
     
     
     func updateJointLabels() {
+        //MAKE THESE INTS NOT FLOATS
+        //also align the labels because it looks weird
         Joint1PositionLabel.text = Joint1Slider.value.description
     Joint2PositionLabel.text=Joint2Slider.value.description
     Joint3PositionLabel.text=Joint3Slider.value.description
@@ -78,10 +81,11 @@ class ManualViewController: UIViewController {
         }
     }
 
-    @IBOutlet weak var Joint1PositionLabel: UILabel!
-    @IBOutlet weak var Joint2PositionLabel: UILabel!
-    @IBOutlet weak var Joint3PositionLabel: UILabel!
-    @IBOutlet weak var BasePositionLabel: UILabel!
+    //i think in here all the stuff is fixed to your label like see #1
+    @IBOutlet weak var Joint1PositionLabel: LanaLabel!
+    @IBOutlet weak var Joint2PositionLabel: LanaLabel!
+    @IBOutlet weak var Joint3PositionLabel: LanaLabel!
+    @IBOutlet weak var BasePositionLabel: LanaLabel!
     @IBOutlet weak var Joint1Slider: UISlider!
     @IBOutlet weak var Joint2Slider: UISlider!
     @IBOutlet weak var Joint3Slider: UISlider!
