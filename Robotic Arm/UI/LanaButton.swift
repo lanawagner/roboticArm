@@ -9,5 +9,14 @@
 import UIKit
 
 class LanaButton : UIButton {
-    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        UISetup()
+    }
+    func UISetup(){
+        
+       self.tintColor = LayoutSettings.red
+        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+
+    }
 }

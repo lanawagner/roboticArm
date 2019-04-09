@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Routine : NSCopying {
+class Routine : NSObject, NSCopying {
     
     
     func copy(with zone: NSZone? = nil) -> Any {
@@ -54,7 +54,7 @@ class Routine : NSCopying {
     
     
     
-   init() {
+   override init() {
     
     name = "Untitled"
 //

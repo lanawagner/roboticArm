@@ -43,7 +43,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aAc-rX-hcJ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="133"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="okj-jp-rdI">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
@@ -79,8 +79,8 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDN-vr-haT" userLabel="ArmConnect">
-                                        <rect key="frame" x="0.0" y="61" width="375" height="493"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDN-vr-haT" userLabel="ArmConnect" customClass="LanaButton" customModule="RoboticArm" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="61" width="375" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <state key="normal" title="Connect to Arm"/>
                                         <connections>
@@ -99,7 +99,6 @@
                             <constraint firstItem="9lo-of-SJn" firstAttribute="trailing" secondItem="aAc-rX-hcJ" secondAttribute="trailing" id="40P-N2-sKQ"/>
                             <constraint firstItem="aAc-rX-hcJ" firstAttribute="top" secondItem="9lo-of-SJn" secondAttribute="top" id="IqA-DA-SHd"/>
                             <constraint firstItem="aAc-rX-hcJ" firstAttribute="leading" secondItem="9lo-of-SJn" secondAttribute="leading" id="Swh-Qt-X2k"/>
-                            <constraint firstItem="9lo-of-SJn" firstAttribute="bottom" secondItem="aAc-rX-hcJ" secondAttribute="bottom" id="pcg-WA-dYa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9lo-of-SJn"/>
                     </view>
@@ -161,12 +160,11 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFM-Cr-w8k">
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="lFM-Cr-w8k">
                                     <rect key="frame" x="20" y="0.0" width="335" height="44"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbs-bB-Tbb">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbs-bB-Tbb" customClass="LanaButton" customModule="RoboticArm" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="44"/>
-                                            <inset key="contentEdgeInsets" minX="0.0" minY="7" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title="Create Routine"/>
                                             <connections>
                                                 <segue destination="rXD-bx-0jd" kind="show" identifier="createRoutine" id="oQc-Wy-vPc"/>
@@ -240,10 +238,65 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Saved Positions" id="vnu-YV-7lf"/>
+                    <connections>
+                        <segue destination="k1l-uw-rgt" kind="show" identifier="runRoutine" id="yyP-LI-OkG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5XS-Kb-wG4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1133.5999999999999" y="1034.9325337331336"/>
+            <point key="canvasLocation" x="1134" y="1035"/>
+        </scene>
+        <!--Routine Run Controller-->
+        <scene sceneID="ND3-6D-tq7">
+            <objects>
+                <viewController storyboardIdentifier="RoutineRunController" id="k1l-uw-rgt" customClass="RoutineRunController" customModule="RoboticArm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2KF-G8-Smn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Hrc-Hj-TER">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Routine Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMd-nu-CL7" customClass="LanaLabel" customModule="RoboticArm" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="201"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="El8-7H-oq8" customClass="LanaLabel" customModule="RoboticArm" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="201" width="375" height="201"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvX-jt-5cy" customClass="LanaButton" customModule="RoboticArm" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="402" width="375" height="201"/>
+                                        <state key="normal" title="Run"/>
+                                        <connections>
+                                            <action selector="startDataTransferWithSender:" destination="k1l-uw-rgt" eventType="touchUpInside" id="OkX-VX-OeF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QDP-In-zL7" firstAttribute="trailing" secondItem="Hrc-Hj-TER" secondAttribute="trailing" id="fqo-EV-iU7"/>
+                            <constraint firstItem="Hrc-Hj-TER" firstAttribute="leading" secondItem="QDP-In-zL7" secondAttribute="leading" id="gbp-4t-HMa"/>
+                            <constraint firstItem="QDP-In-zL7" firstAttribute="bottom" secondItem="Hrc-Hj-TER" secondAttribute="bottom" id="ikv-pf-R0v"/>
+                            <constraint firstItem="Hrc-Hj-TER" firstAttribute="top" secondItem="QDP-In-zL7" secondAttribute="top" id="wHF-nE-T2P"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QDP-In-zL7"/>
+                    </view>
+                    <connections>
+                        <outlet property="progressLabel" destination="El8-7H-oq8" id="RHE-MP-dHK"/>
+                        <outlet property="routineName" destination="EMd-nu-CL7" id="Er6-EQ-siw"/>
+                        <outlet property="startButton" destination="QvX-jt-5cy" id="kgp-0J-ksf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L5u-Ah-UnR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2001" y="1791"/>
         </scene>
         <!--Position List Controller-->
         <scene sceneID="rEW-TB-cah">
@@ -655,7 +708,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="H88-Hn-4wG" userLabel="Send Position">
                                         <rect key="frame" x="0.0" y="394" width="355" height="56.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsB-6b-NqY">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsB-6b-NqY" customClass="LanaButton" customModule="RoboticArm" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="56.5"/>
                                                 <state key="normal" title="Send Position"/>
                                                 <connections>
@@ -667,7 +720,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Bae-e3-fbT" userLabel="Reset">
                                         <rect key="frame" x="0.0" y="450.5" width="355" height="56"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZC-Ra-FRp">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZC-Ra-FRp" customClass="LanaButton" customModule="RoboticArm" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="56"/>
                                                 <state key="normal" title="Reset"/>
                                                 <connections>

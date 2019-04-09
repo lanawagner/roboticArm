@@ -17,4 +17,13 @@ class NetworkManager {
     func sendPosition(pos Position: Position) {
         print(Position.topJointAngle)
     }
+    
+    func processRoutine(r Routine: Routine) {
+        //MAKE SURE THIS IS TRIGGERED IN RRC
+        
+        //var for how often to send
+        //when button is pressed to send, run (for/while?), dump each position one at a time by sending to network manager, nM prints it, HAVE ACCESS TO NETWORK MANAGER LIKE IN OTHER CONTROLLER yeet
+        //networkManager.processRoutine (or something like that) (inside the timer)
+        //ALL THE HW IS IN THIS CLASS
+    }
 }

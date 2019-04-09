@@ -18,12 +18,12 @@ class RoutineStore {
         numberOfRoutines = numberOfRoutines+1
     }
     
-   // func removeRoutine(Routine rot : Routine) {
-     //   if let index = routines.index(of: rot) {
-      //      routines.remove(at: index)
-    //       numberOfRoutines = numberOfRoutines-1
-      //  }
-  //  }
+   func removeRoutine(Routine rot : Routine) {
+       if let index = routines.index(of: rot) {
+           routines.remove(at: index)
+          numberOfRoutines = numberOfRoutines-1
+        }
+    }
     
     func moveRoutine(from fromIndex: Int, to toIndex: Int) {
         if fromIndex == toIndex {
@@ -39,6 +39,8 @@ class RoutineStore {
         // Insert item in array at new location
         routines.insert(movedItem, at: toIndex)
     }
+    
+  
     
     init() {
 //

@@ -9,6 +9,17 @@
 import UIKit
 
 class RoutineCell : UITableViewCell {
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        UISetup()
+    }
+    
+    func UISetup() {
+        self.backgroundColor = LayoutSettings.blue
+    }
+    
+    
     @IBOutlet weak var routineName : UILabel!
     @IBOutlet weak var numberOfPositions : UILabel!
    

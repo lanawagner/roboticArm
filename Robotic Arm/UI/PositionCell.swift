@@ -10,6 +10,14 @@ import UIKit
 
 class PositionCell : UITableViewCell {
     
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        UISetup()
+    }
+    
+    func UISetup() {
+        self.backgroundColor = LayoutSettings.blue
+    }
     
     //try different names?? look for mistake!
     @IBOutlet weak var PositionIndex : UILabel!
