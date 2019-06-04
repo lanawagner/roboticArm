@@ -16,6 +16,7 @@
 		9183D2A6222DEF66001AA8BC /* PositionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9183D2A5222DEF66001AA8BC /* PositionListController.swift */; };
 		9183D2A8222DF2BB001AA8BC /* PositionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9183D2A7222DF2BB001AA8BC /* PositionCell.swift */; };
 		919D25AC225B9FF600D89933 /* LanaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919D25AB225B9FF600D89933 /* LanaButton.swift */; };
+		91A7B75F22A72FCD00E91079 /* DataSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A7B75E22A72FCC00E91079 /* DataSocket.swift */; };
 		91CC51AF225C1011004C25A2 /* RoutineRunController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC51AE225C1011004C25A2 /* RoutineRunController.swift */; };
 		91CD65522224B38200E7F887 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD65512224B38200E7F887 /* Position.swift */; };
 		91CD65542224B4DC00E7F887 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CD65532224B4DC00E7F887 /* Routine.swift */; };
@@ -39,6 +40,7 @@
 		9183D2A5222DEF66001AA8BC /* PositionListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionListController.swift; sourceTree = "<group>"; };
 		9183D2A7222DF2BB001AA8BC /* PositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCell.swift; sourceTree = "<group>"; };
 		919D25AB225B9FF600D89933 /* LanaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanaButton.swift; sourceTree = "<group>"; };
+		91A7B75E22A72FCC00E91079 /* DataSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataSocket.swift; path = "/Users/LanaWagner/Desktop/roboticArmFinal/Robotic Arm/DataSocket.swift"; sourceTree = "<absolute>"; };
 		91CC51AE225C1011004C25A2 /* RoutineRunController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineRunController.swift; sourceTree = "<group>"; };
 		91CD65512224B38200E7F887 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		91CD65532224B4DC00E7F887 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				9180099F224D8BE80001842D /* UI */,
 				91F060E22212422A00233EDF /* AppDelegate.swift */,
 				9170BB802252C88B002F6612 /* LanaNavigationController.swift */,
+				91A7B75E22A72FCC00E91079 /* DataSocket.swift */,
 				9170BB7E2252C7A7002F6612 /* NetworkManager.swift */,
 				9170BB822252D0B4002F6612 /* NetworkManagerViewController.swift */,
 				91F060E42212422A00233EDF /* ManualViewController.swift */,
@@ -204,6 +207,7 @@
 				91CD65562224B4F300E7F887 /* RoutineStore.swift in Sources */,
 				91CD655A2224C78100E7F887 /* LayoutSettings.swift in Sources */,
 				918009A3224D8DD80001842D /* LanaLabel.swift in Sources */,
+				91A7B75F22A72FCD00E91079 /* DataSocket.swift in Sources */,
 				91F060E32212422A00233EDF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,8 +354,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3D293LGU6F;
 				INFOPLIST_FILE = "Robotic Arm/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -359,7 +366,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bignerdranch.Robotic-Arm";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -367,8 +374,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3D293LGU6F;
 				INFOPLIST_FILE = "Robotic Arm/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -376,7 +386,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bignerdranch.Robotic-Arm";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -55,17 +55,17 @@ class Routine : NSObject, NSCopying {
     
     
    override init() {
-    
+    super.init()
     name = "Untitled"
 //
-//    let pos1 = Position(posBaseAngle: 40, posBottomJointAngle: 40, posMiddleJointAngle: 40, posTopJointAngle: 40, posMarkerIsOn: true)
-//    let pos2 = Position(posBaseAngle: 40, posBottomJointAngle: 40, posMiddleJointAngle: 40, posTopJointAngle: 40, posMarkerIsOn: true)
-//    let pos3 = Position(posBaseAngle: 40, posBottomJointAngle: 40, posMiddleJointAngle: 40, posTopJointAngle: 40, posMarkerIsOn: true)
-//    let pos4 = Position(posBaseAngle: 40, posBottomJointAngle: 40, posMiddleJointAngle: 40, posTopJointAngle: 40, posMarkerIsOn: true)
-//    self.addPosition(Position: pos1)
-//    self.addPosition(Position: pos2)
-//    self.addPosition(Position: pos3)
-//    self.addPosition(Position: pos4)
+    let pos1 = Position(posBaseAngle: 40, posBottomJointAngle: 40, posMiddleJointAngle: 40, posTopJointAngle: 40, posMarkerIsOn: true)
+   let pos2 = Position(posBaseAngle: 40, posBottomJointAngle: 40, posMiddleJointAngle: 40, posTopJointAngle: 40, posMarkerIsOn: true)
+    let pos3 = Position(posBaseAngle: 40, posBottomJointAngle: 40, posMiddleJointAngle: 40, posTopJointAngle: 40, posMarkerIsOn: true)
+    let pos4 = Position(posBaseAngle: 40, posBottomJointAngle: 40, posMiddleJointAngle: 40, posTopJointAngle: 40, posMarkerIsOn: true)
+   self.addPosition(Position: pos1)
+   self.addPosition(Position: pos2)
+    self.addPosition(Position: pos3)
+    self.addPosition(Position: pos4)
     
     
     

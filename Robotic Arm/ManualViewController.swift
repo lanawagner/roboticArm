@@ -58,7 +58,7 @@ class ManualViewController: UIViewController {
         networkManager = nv.networkManager
         setupUI()
         updateJointLabels()
-        SendContinuouslySwitch.isEnabled=false
+        SendContinuouslySwitch.isOn = false
         //fix these so they're not floats
         Joint1Slider.minimumValue = 0
         Joint2Slider.minimumValue = 0
@@ -129,20 +129,39 @@ class ManualViewController: UIViewController {
     @IBAction func Led4Changed(_ sender: Any) {
     }
     
+    var sendContinuouslyTimer : Timer!
+    
     @IBAction func sendCChanged(_ sender: Any) {
         if SendContinuouslySwitch.isOn{
-            SendPositionButton.isEnabled=false
+   //         SendPositionButton.isEnabled=false
+            SendPositionButton.setTitle("ABORT", for: .normal)
             //put code to initiate timed sending stuff
+            sendContinuouslyTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(SendPositionPressed(_:)), userInfo: nil, repeats: true)
         }
         else {
-            SendPositionButton.isEnabled=true
+          //  SendPositionButton.isEnabled=true
+            //sendContinuouslyTimer.invalidate()
+            SendPositionButton.setTitle("Send Position", for: .normal)
         }
     }
     
-    @IBAction func SendPositionPressed(_ sender: Any) {
+//    @objc func sendStuffContinuously() {
+//        let aPosition : Position = Position(posBaseAngle: Int(BaseSlider!.value), posBottomJointAngle: Int(Joint1Slider!.value), posMiddleJointAngle: Int(Joint2Slider!.value), posTopJointAngle: Int(Joint3Slider!.value), posMarkerIsOn: MarkerSwitch.isOn)
+//        networkManager.sendPosition(pos: aPosition)
+//    }
+    
+    @IBAction @objc func SendPositionPressed(_ sender: Any) {
+      //FIGURE THIS OUT
+        //SPLIT INTO 2 FUNC, 1 OBJC one nOT??!! do it u won't
         
-        let aPosition : Position = Position(posBaseAngle: Int(BaseSlider!.value), posBottomJointAngle: Int(Joint1Slider!.value), posMiddleJointAngle: Int(Joint2Slider!.value), posTopJointAngle: Int(Joint3Slider!.value), posMarkerIsOn: MarkerSwitch.isOn)
-        networkManager.sendPosition(pos: aPosition)
+        if (!SendContinuouslySwitch.isOn) {
+            let aPosition : Position = Position(posBaseAngle: Int(BaseSlider!.value), posBottomJointAngle: Int(Joint1Slider!.value), posMiddleJointAngle: Int(Joint2Slider!.value), posTopJointAngle: Int(Joint3Slider!.value), posMarkerIsOn: MarkerSwitch.isOn)
+            networkManager.sendPosition(pos: aPosition)
+        }
+        else{
+        sendContinuouslyTimer.invalidate()
+            SendPositionButton.setTitle("Send Position", for: .normal)
+        }
 
     }
     @IBAction func ResetPressed(_ sender: Any) {

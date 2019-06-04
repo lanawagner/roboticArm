@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x7d-97-B8P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x7d-97-B8P">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,7 +44,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aAc-rX-hcJ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="133"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="365.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="okj-jp-rdI">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
@@ -87,6 +88,39 @@
                                             <action selector="connectButtonPressed:" destination="Fzk-BM-kyz" eventType="touchUpInside" id="6Y4-nb-LPH"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hId-bB-SDt">
+                                        <rect key="frame" x="0.0" y="143" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PuI-Jh-2d3" userLabel="Send" customClass="LanaButton" customModule="RoboticArm" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="173.5" width="375" height="72"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="connectButtonPressed:" destination="Fzk-BM-kyz" eventType="touchUpInside" id="AoG-CD-N7f"/>
+                                            <action selector="send" destination="Fzk-BM-kyz" eventType="touchUpInside" id="Yss-gK-q2J"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="169.254.1.1" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RvE-eO-Jrc">
+                                        <rect key="frame" x="0.0" y="255.5" width="375" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2000" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ctG-sJ-M9p">
+                                        <rect key="frame" x="0.0" y="295.5" width="375" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test message" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yvZ-BZ-Pth">
+                                        <rect key="frame" x="0.0" y="335.5" width="375" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="BK1-4j-8dV" firstAttribute="leading" secondItem="NfK-I6-yhB" secondAttribute="leading" id="WVG-k3-6A4"/>
@@ -105,6 +139,11 @@
                     <tabBarItem key="tabBarItem" title="Network" id="eej-D8-fYX"/>
                     <connections>
                         <outlet property="ConnectToArm" destination="dDN-vr-haT" id="fu1-jm-4xE"/>
+                        <outlet property="ipAddressField" destination="RvE-eO-Jrc" id="ThX-KJ-ytm"/>
+                        <outlet property="messageField" destination="yvZ-BZ-Pth" id="avS-hE-1Io"/>
+                        <outlet property="portField" destination="ctG-sJ-M9p" id="vvN-Ud-KwS"/>
+                        <outlet property="sendBtn" destination="PuI-Jh-2d3" id="T7Z-wJ-td2"/>
+                        <outlet property="statusLabl" destination="hId-bB-SDt" id="K5Y-13-9AD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pyi-tr-aw0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -273,7 +312,7 @@
                                         <rect key="frame" x="0.0" y="402" width="375" height="201"/>
                                         <state key="normal" title="Run"/>
                                         <connections>
-                                            <action selector="startDataTransferWithSender:" destination="k1l-uw-rgt" eventType="touchUpInside" id="OkX-VX-OeF"/>
+                                            <action selector="startDataTransferWithSender:" destination="k1l-uw-rgt" eventType="touchUpInside" id="Hbr-j8-80F"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -509,6 +548,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kg4-n4-h88">
                                                 <rect key="frame" x="306" y="0.0" width="51" height="56.5"/>
+                                                <connections>
+                                                    <action selector="sendCChanged:" destination="dfG-JN-I3t" eventType="valueChanged" id="rvw-CI-dZn"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>

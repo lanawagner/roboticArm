@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/LanaWagner/Desktop/Robotic Arm/RoboticArm.xcodeproj">
+      location = "group:/Users/LanaWagner/Desktop/roboticArmFinal/Robotic Arm/DataSocket.swift">
+   </FileRef>
+   <FileRef
+      location = "group:../Robotic Arm/LanaNavigationController.swift">
+   </FileRef>
+   <FileRef
+      location = "group:../Robotic Arm/LayoutSettings.swift">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
