@@ -47,7 +47,7 @@ class RoutineRunController : UIViewController {
     }
     
     @objc func sendPosition() {
-        networkManager.sendPosition(pos: currentRoutine.positions[positionIndex])
+        networkManager.send(message: currentRoutine.positions[positionIndex].stringRep)
         positionIndex = positionIndex + 1
         progressLabel.text = (Float(positionIndex)/Float(currentRoutine.numberOfPos)*100).description+"%"
         

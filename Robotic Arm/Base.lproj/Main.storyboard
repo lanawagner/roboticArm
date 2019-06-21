@@ -99,7 +99,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <state key="normal" title="Send"/>
                                         <connections>
-                                            <action selector="connectButtonPressed:" destination="Fzk-BM-kyz" eventType="touchUpInside" id="AoG-CD-N7f"/>
                                             <action selector="send" destination="Fzk-BM-kyz" eventType="touchUpInside" id="Yss-gK-q2J"/>
                                         </connections>
                                     </button>

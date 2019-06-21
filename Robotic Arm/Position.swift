@@ -14,7 +14,7 @@ class Position : NSObject {
     var middleJointAngle: Int = 0
     var topJointAngle: Int = 0
     var markerIsOn: Bool = false
-    
+    var stringRep: String!
     
     override init() {
         super.init()
@@ -28,8 +28,12 @@ class Position : NSObject {
         self.middleJointAngle = posMiddleJointAngle
         self.topJointAngle = posTopJointAngle
         self.markerIsOn = posMarkerIsOn
-       
+        self.stringRep = "G," + baseAngle.description + "," + bottomJointAngle.description + "," + middleJointAngle.description + "," + topJointAngle.description + "\n"
     }
+    
+    
+    
+
     
     
 }

@@ -156,7 +156,7 @@ class ManualViewController: UIViewController {
         
         if (!SendContinuouslySwitch.isOn) {
             let aPosition : Position = Position(posBaseAngle: Int(BaseSlider!.value), posBottomJointAngle: Int(Joint1Slider!.value), posMiddleJointAngle: Int(Joint2Slider!.value), posTopJointAngle: Int(Joint3Slider!.value), posMarkerIsOn: MarkerSwitch.isOn)
-            networkManager.sendPosition(pos: aPosition)
+            networkManager.send(message: aPosition.stringRep)
         }
         else{
         sendContinuouslyTimer.invalidate()

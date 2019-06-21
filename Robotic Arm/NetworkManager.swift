@@ -23,7 +23,7 @@ class NetworkManager {
     var outputStream: OutputStream?
     
     func sendPosition(pos Position: Position) {
-        print(Position.topJointAngle)
+        
     }
     
     func processRoutine(Routine r : Routine) {
